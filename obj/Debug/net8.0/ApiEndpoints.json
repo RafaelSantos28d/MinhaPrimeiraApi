@@ -48,10 +48,21 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[MinhaPrimeiraApi.Models.UsuarioModel, MinhaPrimeiraApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "MinhaPrimeiraApi.Pagination.PagedList\u00601[[MinhaPrimeiraApi.Models.UsuarioModel, MinhaPrimeiraApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

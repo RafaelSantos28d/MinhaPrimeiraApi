@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MinhaPrimeiraApi.Extensions;
 using MinhaPrimeiraApi.Models;
+using MinhaPrimeiraApi.Pagination;
 using MinhaPrimeiraApi.Repositorios.Interfaces;
 
 namespace MinhaPrimeiraApi.Controllers
@@ -17,9 +19,10 @@ namespace MinhaPrimeiraApi.Controllers
             _usuarioRepositorio = usuarioRepositorio;
         }
         [HttpGet]
-        public async Task<ActionResult<List<UsuarioModel>>> ListarTodos()
+        public async Task<ActionResult<PagedList<UsuarioModel>>> ListarTodos([FromQuery]PaginationParameters paginationParameters)
         {
-            var usuarios = await _usuarioRepositorio.ListarUsuarios();
+            var usuarios = await _usuarioRepositorio.ListarUsuarios(paginationParameters.PageNumber, paginationParameters.PageSize);
+            Response.AddPagiantionHeader(new PaginationHeader(usuarios.CurrentPage, usuarios.PageSize, usuarios.TotalPages, usuarios.TotalCount));
             return Ok(usuarios);
 
         }

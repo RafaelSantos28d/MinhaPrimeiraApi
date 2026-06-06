@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MinhaPrimeiraApi.Data;
 using MinhaPrimeiraApi.Models;
+using MinhaPrimeiraApi.Pagination;
 using MinhaPrimeiraApi.Repositorios.Interfaces;
 
 namespace MinhaPrimeiraApi.Repositorios
@@ -12,9 +13,11 @@ namespace MinhaPrimeiraApi.Repositorios
         {
             _bancoContext = bancoContext;
         }
-        public async Task<List<UsuarioModel>> ListarUsuarios()
+        public async Task<PagedList<UsuarioModel>> ListarUsuarios(int pageNumber, int pageSize)
         {
-            return await _bancoContext.Usuarios.ToListAsync();
+            var query = _bancoContext.Usuarios.AsQueryable();
+            return await PagedList<UsuarioModel>.CreatAsync(query, pageNumber, pageSize);
+
         }
 
         public async Task<UsuarioModel> ListarUsuarioPorId(int id)
@@ -53,5 +56,7 @@ namespace MinhaPrimeiraApi.Repositorios
             await _bancoContext.SaveChangesAsync();
             return true;
         }
+
+        
     }
 }

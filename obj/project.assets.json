@@ -3321,11 +3321,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Programas\\MinhaPrimeiraApi\\MinhaPrimeiraApi\\MinhaPrimeiraApi.csproj",
+      "projectUniqueName": "C:\\Users\\mique\\OneDrive\\Desktop\\Programas\\MinhaPrimeiraApi\\MinhaPrimeiraApi\\MinhaPrimeiraApi.csproj",
       "projectName": "MinhaPrimeiraApi",
-      "projectPath": "C:\\Programas\\MinhaPrimeiraApi\\MinhaPrimeiraApi\\MinhaPrimeiraApi.csproj",
+      "projectPath": "C:\\Users\\mique\\OneDrive\\Desktop\\Programas\\MinhaPrimeiraApi\\MinhaPrimeiraApi\\MinhaPrimeiraApi.csproj",
       "packagesPath": "C:\\Users\\mique\\.nuget\\packages\\",
-      "outputPath": "C:\\Programas\\MinhaPrimeiraApi\\MinhaPrimeiraApi\\obj\\",
+      "outputPath": "C:\\Users\\mique\\OneDrive\\Desktop\\Programas\\MinhaPrimeiraApi\\MinhaPrimeiraApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
